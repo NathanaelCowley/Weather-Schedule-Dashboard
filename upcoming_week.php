@@ -32,6 +32,14 @@ $CONFIG = [
     'GOOGLE_CALENDAR_ID'   => $_ENV['GOOGLE_CALENDAR_ID']   ?? 'YOUR_CALENDAR_ID@group.calendar.google.com',
 ];
 
+//Simple auth - use whatever you're currently using for user authentication
+session_start();
+if (empty($_SESSION['admin_id'])) {
+    echo ":(";
+    exit;
+}
+
+
 // Location used for weather forecast
 define('WEATHER_LAT',  -27.470125);          
 define('WEATHER_LON',  153.021072);          
